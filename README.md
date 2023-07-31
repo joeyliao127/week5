@@ -10,23 +10,17 @@ SELECT * FROM website.member;
 
 ```sql
 CREATE TABLE member (
-
-    ->     id BIGINT PRIMARY KEY AUTO_INCREMENT,
-
-    ->     name VARCHAR(255) NOT NULL,
-
-    ->     username VARCHAR(255) NOT NULL,
-
-    ->     password VARCHAR(255) NOT NULL,
-
-    ->     follower_count INT UNSIGNED NOT NULL DEFAULT 0,
-
-    ->     time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
-
-    -> );
+        id BIGINT PRIMARY KEY AUTO_INCREMENT,
+        name VARCHAR(255) NOT NULL,
+        username VARCHAR(255) NOT NULL,
+        password VARCHAR(255) NOT NULL,
+        follower_count INT UNSIGNED NOT NULL DEFAULT 0,
+        time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
 ```
 
 id：PK，自動遞增。
+
 name：字串，不能為空。
 username：字串，不能為空。
 password：字串，不能為空。
@@ -60,6 +54,8 @@ INSERT INTO member(name, username, password, follower_count, time)
 VALUES('William', 'William', 'William123', 1247, '2021-11-20 16:30:42');
 ```
 
+先指定 website 資料庫，後面的指令就不用加上 website.(沒有截到 USE website;)
+
 ![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task3-1InsertData.jpg)
 
 ## Task3-2 顯示所有資料
@@ -89,7 +85,7 @@ SELECT 顯示的欄位 FROM 資料表 order by 欄位 DESC;
 Code：
 
 ```sql
-SELECT * FROM website.member order by time desc;
+SELECT * FROM member order by time desc;
 ```
 
 ![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task3-3-TimeSortDesc.jpg)
@@ -137,7 +133,7 @@ SELECT * FROM 資料表 where 條件1 and 條件2 ;
 Code：
 
 ```sql
-SELECT * FROM website.member where username = "test" and password = "test";
+SELECT * FROM member where username = "test" and password = "test";
 ```
 
 ![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task3-6-UsernameAndPassword.jpg)
