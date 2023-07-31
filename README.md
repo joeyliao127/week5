@@ -1,5 +1,3 @@
-# week5
-
 # Week5
 
 ## Task2-1 建立資料庫
@@ -62,7 +60,7 @@ INSERT INTO member(name, username, password, follower_count, time)
 VALUES('William', 'William', 'William123', 1247, '2021-11-20 16:30:42');
 ```
 
-![結果：](./Result/Task3-1InsertData.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task3-1InsertData.jpg)
 
 ## Task3-2 顯示所有資料
 
@@ -78,7 +76,7 @@ Code：
 SELECT * FROM member;
 ```
 
-![結果：](./Result/Task3-2-SelectAll.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task3-2-SelectAll.jpg)
 
 ## Task3-3 顯示所有 member 資料，透過時間排序
 
@@ -94,7 +92,7 @@ Code：
 SELECT * FROM website.member order by time desc;
 ```
 
-![結果：](./Result/Task3-3-TimeSortDesc.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task3-3-TimeSortDesc.jpg)
 
 ## Task3-4 顯示第 2 到 4 筆資料
 
@@ -112,7 +110,7 @@ Code：
 SELECT * FROM member limit 3 OFFSET 1;
 ```
 
-![結果：](./Result/Task3-4-2to4.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task3-4-2to4.jpg)
 
 ## Task3-5 單一條件查詢，顯示 Username 等於 Test 的資料
 
@@ -128,7 +126,7 @@ Code：
 SELECT * FROM member where username = "test";
 ```
 
-![結果：](./Result/Task3-5UsernameTest.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task3-5UsernameTest.jpg)
 
 ## Task3-6 多重條件查詢，顯示 Username 和 Password 都是 test 的資料
 
@@ -142,7 +140,7 @@ Code：
 SELECT * FROM website.member where username = "test" and password = "test";
 ```
 
-![結果：](./Result/Task3-6-UsernameAndPassword.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task3-6-UsernameAndPassword.jpg)
 
 ## Task3-7 更新資料，將 test 改為
 
@@ -156,7 +154,7 @@ Code：
 UPDATE member SET username = 'test2' where username = 'test';
 ```
 
-![結果：](./Result/Task3-7-UpdateTest.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task3-7-UpdateTest.jpg)
 
 ## Task4-1 計算資料量總和，計算 member 數總和
 
@@ -170,7 +168,7 @@ Code：
 SELECT count(*) FROM member;
 ```
 
-![結果：](./Result/Task4-1-memberCount.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task4-1-memberCount.jpg)
 
 ## Task4-2 資料內容總和，計算 follower 內容總和
 
@@ -186,7 +184,7 @@ Code：
 SELECT SUM(follower_count) FROM member;
 ```
 
-![結果：](./Result/Task4-2-followerCount.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task4-2-followerCount.jpg)
 
 ## Task4-3 計算平均數，計算 follower_count 內容平均
 
@@ -204,7 +202,7 @@ SELECT FORMAT(AVG(follower_count),0) FROM member;
 
 FORMAT 可以設定小數點第幾位。
 
-![結果：](./Result/Task4-3-AVG.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task4-3-AVG.jpg)
 
 ## Task5-1 合併查詢，取得所有留言並顯示留言者的姓名
 
@@ -256,7 +254,7 @@ Code：
 SELECT member.name, message.content FROM message JOIN member ON message.member_id = member.id order by member_id;
 ```
 
-![結果：](./Result/Task5-1-JOINALL.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task5-1-JOINALL.jpg)
 
 ## Task5-2 多重條件合併查詢，查詢 test 的所有留言
 
@@ -268,7 +266,7 @@ JOIN message on member.id = message.member_id
 and member.name = 'test';
 ```
 
-![結果：](./Result/Task5-2-JOINTEST.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task5-2-JOINTEST.jpg)
 
 ## Task5-3 合併查詢搭配 Aggregate Fn，取得 member 資料表中欄位為 test 的所有留言，平均按讚數
 
@@ -281,4 +279,4 @@ GROUP BY member.name;
 ```
 
 GROUP BY 可以將同個 Column 中的指定內容，做區別計算。
-![結果：](./Result/Task5-3-like_AVG.jpg)
+![結果：](https://github.com/joeyliao127/week5/blob/master/result/Task5-3-like_AVG.jpg)
